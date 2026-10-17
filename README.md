@@ -1,8 +1,8 @@
 # Lab4Web – Praktikum 4: CSS Layout
  
 **Mata kuliah:** Pemrograman Web  
-**Nama / NIM:** [isi nama dan NIM]  
-**Kelas:** [isi kelas]
+**Nama / NIM:** Rahsya Alfrendika / 312510339
+**Kelas:** I25/3C
  
 ## Struktur Folder
  
