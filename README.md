@@ -15,7 +15,7 @@ Lab4Web/
 │   ├── about.html      (Tugas 1)
 │   ├── kontak.html     (Tugas 2)
 │   └── style.css
-├── screenshots/        (isi dengan screenshot hasil)
+├── screenshots/        
 └── README.md
 ```
  
@@ -125,5 +125,5 @@ Layout yang sama dengan form isian: **Nama, Email, No. Telepon, Subjek (select),
  
 
  
-📷 `screenshots/13-validasi.png`
+
  
