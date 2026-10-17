@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Sederhana</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; }
+body { line-height: 1; font-size: 100%; font-family: 'Open Sans', sans-serif; color: #5a5a5a; }
+#container { width: 980px; margin: 0 auto; box-shadow: 0 0 1em #ccc; }
+
+/* header & nav */
+header { padding: 20px; }
+header h1 { margin: 20px 10px; color: #b5b5b5; }
+nav { display: block; background-color: #1f5faa; }
+nav a { padding: 15px 30px; display: inline-block; color: #fff; font-size: 14px; text-decoration: none; font-weight: bold; }
+nav a.active, nav a:hover { background-color: #2b83ea; }
+
+/* hero */
+#hero, .hero { background-color: #e4e4e5; padding: 50px 20px; margin-bottom: 20px; }
+.hero h1 { margin-bottom: 20px; font-size: 35px; }
+.hero p { margin-bottom: 20px; font-size: 18px; line-height: 25px; }
+
+/* tombol */
+.btn { display: inline-block; padding: 8px 16px; border-radius: 3px; font-size: 14px; text-decoration: none; cursor: pointer; border: 0; font-family: inherit; }
+.btn-large { padding: 12px 20px; background: #2b83ea; color: #fff; font-weight: bold; }
+.btn-large:hover { background: #1f5faa; }
+.btn-default { background: #bbb; color: #fff; }
+.btn-default:hover { background: #999; }
+
+/* main & sidebar (float) */
+.main { float: left; width: 640px; padding: 20px; }
+.sidebar { float: left; width: 260px; padding: 20px; }
+
+/* widget */
+.widget-box { border: 1px solid #eee; margin-bottom: 20px; }
+.widget-box .title { padding: 10px 16px; background: #428bca; color: #fff; }
+.widget-box ul { list-style: none; }
+.widget-box li { border-bottom: 1px solid #eee; }
+.widget-box li a { padding: 10px 16px; color: #333; display: block; text-decoration: none; }
+.widget-box li:hover a { background: #eee; }
+.widget-box p { padding: 15px; line-height: 25px; }
+
+/* footer */
+footer { clear: both; background: #1d1d1d; padding: 20px; color: #eee; }
+
+/* box 3 kolom */
+.box { display: block; float: left; width: 33.333333%; box-sizing: border-box; padding: 0 10px; text-align: center; }
+.box h3 { margin: 15px 0; }
+.box p { line-height: 20px; font-size: 14px; margin-bottom: 15px; }
+.image-circle { border-radius: 50%; }
+.row { margin: 0 -10px; box-sizing: border-box; }
+.row:before, .row:after, .entry:before, .entry:after { content: ''; display: table; }
+.row:after, .entry:after { clear: both; }
+.divider { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
+
+/* entry */
+.entry { margin: 15px 0; }
+.entry h2 { margin-bottom: 20px; }
+.entry p { line-height: 25px; margin-bottom: 10px; }
+.entry img { float: left; border-radius: 5px; margin-right: 15px; }
+.entry .right-img { float: right; margin-right: 0; margin-left: 15px; }
+.entry .about-photo { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 20px 10px 0; }
+
+/* about */
+.page-title { font-size: 26px; margin-bottom: 20px; }
+.skill-list { list-style: none; margin: 15px 0; overflow: hidden; }
+.skill-list li { float: left; background: #1f5faa; color: #fff; font-size: 13px; padding: 6px 12px; border-radius: 3px; margin: 0 8px 8px 0; }
+.portfolio-item { float: left; width: 50%; box-sizing: border-box; padding: 0 10px; margin-bottom: 20px; }
+.portfolio-item img { width: 100%; height: auto; border-radius: 5px; display: block; }
+.portfolio-item h4 { margin: 10px 0 5px; }
+.portfolio-item p { font-size: 14px; line-height: 20px; }
+
+/* form kontak */
+.contact-form .form-group { margin-bottom: 18px; }
+.contact-form label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form select, .contact-form textarea {
+  width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #ccc; border-radius: 3px; font-family: inherit; font-size: 14px; color: #5a5a5a; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: #2b83ea; box-shadow: 0 0 4px rgba(43,131,234,.4); }
+.contact-form textarea { resize: vertical; }
+.contact-form .btn { margin-right: 8px; }
+
+/* ganti halaman */
+.page { display: none; }
+.page.active { display: block; }
+.page:after { content: ''; display: table; clear: both; }
+</style>
+</head>
+<body>
+<div id="container">
+
+  <header><h1>Layout Sederhana</h1></header>
+
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#about">About</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <!-- ================= HOME ================= -->
+  <div class="page active" id="home">
+    <section class="hero">
+      <h1>Hello World!</h1>
+      <p>welcome to our website</p>
+      <a href="#about" class="btn btn-large">Learn more &raquo;</a>
+    </section>
+    <section>
+      <section class="main">
+        <div class="row">
+          <div class="box">
+            <img src="https://dummyimage.com/120/db7d25/fff.png" alt="" class="image-circle">
+            <h3>Heading</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+            <a href="#" class="btn btn-default">View detail</a>
+          </div>
+          <div class="box">
+            <img src="https://dummyimage.com/120/3e73e6/fff.png" alt="" class="image-circle">
+            <h3>Heading</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+            <a href="#" class="btn btn-default">View detail</a>
+          </div>
+          <div class="box">
+            <img src="https://dummyimage.com/120/71e6d4/fff.png" alt="" class="image-circle">
+            <h3>Heading</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+            <a href="#" class="btn btn-default">View detail</a>
+          </div>
+        </div>
+        <hr class="divider">
+        <article class="entry">
+          <h2>First featurette heading.</h2>
+          <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+          <p>welcome to our website</p>
+        </article>
+        <hr class="divider">
+        <article class="entry">
+          <h2>First featurette heading.</h2>
+          <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="" class="right-img">
+          <p>welcome to our website</p>
+        </article>
+      </section>
+      <aside class="sidebar">
+        <div class="widget-box">
+          <h3 class="title">Widget Header</h3>
+          <ul>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+          </ul>
+        </div>
+        <div class="widget-box">
+          <h3 class="title">Widget Text</h3>
+          <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- ================= ARTIKEL ================= -->
+  <div class="page" id="artikel">
+    <section>
+      <section class="main">
+        <h2 class="page-title">Artikel</h2>
+        <article class="entry">
+          <h2>Artikel Pertama</h2>
+          <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+          <p>welcome to our website</p>
+        </article>
+        <hr class="divider">
+        <article class="entry">
+          <h2>Artikel Kedua</h2>
+          <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="" class="right-img">
+          <p>welcome to our website</p>
+        </article>
+      </section>
+      <aside class="sidebar">
+        <div class="widget-box">
+          <h3 class="title">Widget Header</h3>
+          <ul>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+            <li><a href="#">Widget Link</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- ================= ABOUT (Tugas 1) ================= -->
+  <div class="page" id="about">
+    <section class="hero">
+      <h1>About Me</h1>
+      <p>Mahasiswa Teknik Informatika yang tertarik pada pengembangan web, desain antarmuka, dan pemrograman.</p>
+    </section>
+    <section>
+      <section class="main">
+        <article class="entry">
+          <h2>Deskripsi</h2>
+          <img src="IMG-20240209-WA0108.jpg" alt="Foto profil" class="about-photo">
+          <p>Halo, nama saya Rahsya Alfrendika dengan NIM 312510339. Saya sedang mempelajari Pemrograman Web di Universitas Pelita Bangsa. Saya menyukai pembuatan tampilan web yang rapi, responsif, dan mudah digunakan.</p>
+          <p>welcome to our website</p>
+        </article>
+        <hr class="divider">
+        <h2 class="page-title">Keahlian</h2>
+        <ul class="skill-list">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>MySQL</li><li>Git &amp; GitHub</li>
+        </ul>
+        <hr class="divider">
+        <h2 class="page-title">Portfolio</h2>
+        <div class="row">
+          <div class="portfolio-item">
+            <img src="https://dummyimage.com/300x180/db7d25/fff.png&text=Project+1" alt="Project 1">
+            <h4>Website Profil</h4>
+            <p>Halaman profil pribadi dengan layout HTML5 semantic dan CSS float.</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://dummyimage.com/300x180/3e73e6/fff.png&text=Project+2" alt="Project 2">
+            <h4>Aplikasi To-Do</h4>
+            <p>Aplikasi pencatat tugas sederhana menggunakan JavaScript.</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://dummyimage.com/300x180/71e6d4/fff.png&text=Project+3" alt="Project 3">
+            <h4>Sistem Informasi</h4>
+            <p>Sistem informasi data mahasiswa dengan PHP dan MySQL.</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://dummyimage.com/300x180/7b8a70/fff.png&text=Project+4" alt="Project 4">
+            <h4>Landing Page</h4>
+            <p>Landing page produk yang responsif dan ringan.</p>
+          </div>
+        </div>
+      </section>
+      <aside class="sidebar">
+        <div class="widget-box">
+          <h3 class="title">Data Diri</h3>
+          <ul>
+            <li><a href="#">Nama: Rahsya Alfrendika </a></li>
+            <li><a href="#">NIM: [312510339]</a></li>
+            <li><a href="#">Prodi: Teknik Informatika</a></li>
+            <li><a href="#">Kampus: Universitas Pelita Bangsa</a></li>
+          </ul>
+        </div>
+        <div class="widget-box">
+          <h3 class="title">Tentang Saya</h3>
+          <p>Suka belajar hal baru, ngoding, dan berbagi pengetahuan.</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- ================= KONTAK (Tugas 2) ================= -->
+  <div class="page" id="kontak">
+    <section class="hero">
+      <h1>Hubungi Kami</h1>
+      <p>Silakan isi formulir di bawah ini untuk mengirim pesan, pertanyaan, atau saran.</p>
+    </section>
+    <section>
+      <section class="main">
+        <h2 class="page-title">Form Kontak</h2>
+        <form class="contact-form" onsubmit="alert('Pesan terkirim (simulasi). Terima kasih!'); this.reset(); return false;">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" placeholder="Nama lengkap" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="nama@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="telepon">No. Telepon</label>
+            <input type="text" id="telepon" placeholder="08xxxxxxxxxx">
+          </div>
+          <div class="form-group">
+            <label for="subjek">Subjek</label>
+            <select id="subjek">
+              <option>Pertanyaan</option>
+              <option>Saran</option>
+              <option>Kerja sama</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-large">Kirim &raquo;</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </section>
+      <aside class="sidebar">
+        <div class="widget-box">
+          <h3 class="title">Informasi Kontak</h3>
+          <ul>
+            <li><a href="#">Universitas Pelita Bangsa</a></li>
+            <li><a href="#">Bekasi, Jawa Barat</a></li>
+            <li><a href="#">info@pelitabangsa.ac.id</a></li>
+            <li><a href="#">(021) 0000-0000</a></li>
+          </ul>
+        </div>
+        <div class="widget-box">
+          <h3 class="title">Jam Layanan</h3>
+          <p>Senin - Jumat: 08.00 - 16.00 WIB.</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <footer><p>&copy; 2021 - Universitas Pelita Bangsa</p></footer>
+</div>
+
+<script>
+  // Navigasi antar halaman (tanpa reload)
+  function showPage() {
+    var id = (location.hash || '#home').substring(1);
+    if (!document.getElementById(id)) id = 'home';
+    document.querySelectorAll('.page').forEach(function (p) { p.classList.toggle('active', p.id === id); });
+    document.querySelectorAll('nav a').forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', showPage);
+  showPage();
+</script>
+</body>
+</html>
